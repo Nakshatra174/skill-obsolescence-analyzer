@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Market Insights | Skill Obsolescence</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    {% include 'navbar.html' %}
+
+    <!-- INSIGHTS CONTENT -->
+    <div class="page-wrapper">
+        <div class="insights-container">
+
+            <!-- PAGE TITLE -->
+            <h1 class="page-title">Skill Market Insights</h1>
+            <p class="page-subtitle">
+                This section presents aggregated insights derived from the skill obsolescence dataset,
+                highlighting demand trends and automation risk across the job market.
+            </p>
+<!-- SUMMARY STATS -->
+<div class="summary-cards">
+
+    <div class="summary-card low">
+        <h3>Low Risk</h3>
+        <p class="count">{{ low_risk }}</p>
+    </div>
+
+    <div class="summary-card medium">
+        <h3>Medium Risk</h3>
+        <p class="count">{{ medium_risk }}</p>
+    </div>
+
+    <div class="summary-card high">
+        <h3>High Risk</h3>
+        <p class="count">{{ high_risk }}</p>
+    </div>
+
+</div>
+
+
+            <!-- CARD 1 -->
+            <div class="insight-card">
+                <h2>Skill Obsolescence Distribution</h2>
+                <p class="card-description">
+                    This chart shows how skills are distributed based on their obsolescence levels,
+                    helping identify which skills are more likely to become outdated.
+                </p>
+                <div class="chart-wrapper">
+                    <img src="{{ url_for('static', filename='charts/obsolescence_distribution.png') }}"
+                         alt="Obsolescence Distribution">
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="insight-card">
+                <h2>Risk Level Distribution</h2>
+                <p class="card-description">
+                    This chart categorizes skills based on their automation risk level.
+                </p>
+                <div class="chart-wrapper">
+                    <img src="{{ url_for('static', filename='charts/risk_level_distribution.png') }}"
+                         alt="Risk Level Distribution">
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="insight-card">
+                <h2>Average Distribution of Skill Factors</h2>
+                <p class="card-description">
+                    This chart represents the average demand, automation impact,
+                    and learning requirement across all skills in the dataset.
+                </p>
+                <div class="chart-wrapper">
+                    <img src="{{ url_for('static', filename='charts/average_distribution.png') }}"
+                         alt="Average Distribution Chart">
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+<div class="insight-card">
+    <h2>Skill Demand Trend</h2>
+    <p class="card-description">
+        This chart illustrates how overall skill demand has changed over time,
+        indicating emerging and declining trends in the job market.
+    </p>
+
+    <div class="chart-wrapper">
+        <img src="/static/charts/skill_demand_trend.png"
+             alt="Skill Demand Trend">
+    </div>
+</div>
+

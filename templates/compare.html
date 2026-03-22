@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compare Skills</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+
+<div class="container">
+
+    <h2>Skill Comparison</h2>
+
+    <form action="/compare-result" method="post" class="center-form">
+
+        <label>Skill 1</label><br>
+        <input type="text" name="skill1" required><br><br>
+
+        <label>Skill 2</label><br>
+        <input type="text" name="skill2" required><br><br>
+
+        <button type="submit">Compare Skills</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

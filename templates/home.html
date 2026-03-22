@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skill Obsolescence System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- Navigation Bar (UNCHANGED) -->
+{% include 'navbar.html' %}
+
+<!-- HOME PAGE WRAPPER -->
+<div class="home-wrapper">
+
+    <!-- CENTER CARD -->
+    <div class="home-card">
+
+        <h1 class="home-title">Skill Obsolescence Analysis System</h1>
+
+        <p class="home-subtitle">
+            A data-driven decision support system to evaluate the future
+            relevance of skills in a rapidly evolving job market.
+        </p>
+
+        <div class="home-content">
+            <p>
+                This system helps students and professionals assess the
+                sustainability of technical and non-technical skills based on
+                <strong>industry demand</strong>, <strong>automation risk</strong>,
+                and <strong>usage trends</strong>.
+            </p>
+
+            <p>
+                By analyzing historical and domain-specific data, the system
+                provides meaningful insights for career planning and skill
+                development.
+            </p>
+
+            <p>
+                Designed as a modular and extensible platform, this application
+                supports future integration with AI models and real-time market
+                intelligence.
+            </p>
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="home-actions">
+            <a href="/analyze" class="primary-btn">Analyze a Skill</a>
+            <a href="/insights" class="secondary-btn">View Market Insights</a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

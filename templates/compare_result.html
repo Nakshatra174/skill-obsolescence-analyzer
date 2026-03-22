@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skill Comparison Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+
+<div class="container">
+
+    <h2>Skill Comparison Report</h2>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% else %}
+
+        <h3>{{ skill1.name }}</h3>
+        <p>Score: {{ skill1.score }}</p>
+        <p>Risk: {{ skill1.risk }}</p>
+
+        <hr>
+
+        <h3>{{ skill2.name }}</h3>
+        <p>Score: {{ skill2.score }}</p>
+        <p>Risk: {{ skill2.risk }}</p>
+
+        <hr>
+
+        <h3>Conclusion</h3>
+        <p>
+            Based on the obsolescence scores, 
+            <b>{{ safer_skill }}</b> is considered the safer skill
+            for long-term career sustainability.
+        </p>
+
+    {% endif %}
+
+    <a href="/compare">Compare Again</a>
+
+</div>
+
+</body>
+</html>

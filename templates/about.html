@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About | Skill Obsolescence System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+{% include 'navbar.html' %}
+
+
+<div class="container">
+    <h2>About the Project</h2>
+
+    <p>
+        The Skill Obsolescence Prediction and Comparative Analysis System is a
+        data-driven web application designed to analyze the longevity of
+        technical skills in a rapidly evolving job market.
+    </p>
+
+    <h3>Problem Statement</h3>
+    <p>
+        With increasing automation and technological advancements, many skills
+        lose relevance over time. Individuals often lack tools to assess whether
+        a skill is worth investing in for long-term career growth.
+    </p>
+
+    <h3>Proposed Solution</h3>
+    <p>
+        This system evaluates skills using structured datasets and weighted
+        scoring techniques to estimate obsolescence risk. It also allows
+        comparison between skills to support informed decision-making.
+    </p>
+
+    <h3>Technology Stack</h3>
+    <ul>
+        <li>Frontend: HTML, CSS</li>
+        <li>Backend: Python (Flask)</li>
+        <li>Dataset: CSV-based skill metrics</li>
+        <li>Analysis: Rule-based weighted scoring</li>
+    </ul>
+
+    <h3>Future Scope</h3>
+    <ul>
+        <li>Graphical trend analysis</li>
+        <li>Skill recommendations</li>
+        <li>Admin dataset management</li>
+        <li>Explainable AI insights</li>
+    </ul>
+</div>
+
+</body>
+</html>

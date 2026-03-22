@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skill Obsolescence Analyzer</title>
+
+    <!-- CSS connection -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+   {% include 'navbar.html' %}
+
+
+
+    <div class="container">
+
+        <h2>Skill Obsolescence Analyzer</h2>
+
+        <form action="/predict" method="post" class="center-form">
+
+            <label>Enter Skill Name</label><br>
+            <input type="text" name="skill" required><br><br>
+
+            <button type="submit">Check Obsolescence</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

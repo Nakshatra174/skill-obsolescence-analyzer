@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skill Analysis Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+
+<div class="container">
+
+{% if message %}
+    <h2>{{ message }}</h2>
+{% else %}
+
+    <h2>Skill Obsolescence Report</h2>
+
+    <p><b>Skill Name:</b> {{ skill }}</p>
+<p><b>Obsolescence Score:</b> {{ score }}</p>
+<p><b>Risk Level:</b> {{ risk }}</p>
+
+<hr>
+
+<h3>Factor-wise Analysis</h3>
+
+<ul>
+    <li><b>Demand Level:</b> {{ details.demand }} / 10</li>
+    <li><b>Automation Risk:</b> {{ details.automation }} / 10</li>
+    <li><b>Industry Usage:</b> {{ details.industry }} / 10</li>
+</ul>
+
+<hr>
+
+<h3>Interpretation</h3>
+<p>
+    The obsolescence score is calculated by giving higher weight to automation
+    exposure, followed by demand decline and industry relevance.
+    Skills with high automation risk and low demand are more likely to become obsolete.
+</p>
+
+
+{% endif %}
+
+<a href="/analyze">Analyze Another Skill</a>
+{% if recommendations and recommendations|length > 0 %}
+<hr>
+
+<div style="max-width: 400px; margin: 30px auto;">
+
+    <h3 style="text-align:center;">Recommended Alternative Skills</h3>
+
+    <ul style="
+        list-style: disc;
+        padding-left: 40px;
+        text-align: left;
+        margin-top: 15px;
+        font-size: 16px;
+    ">
+        {% for skill in recommendations %}
+            <li style="margin-bottom: 6px;">
+                {{ skill }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <p style="
+        text-align:center;
+        font-size:14px;
+        color:#555;
+        margin-top: 15px;
+    ">
+        These skills are considered more future-proof based on current market trends.
+    </p>
+
+</div>
+{% endif %}
+
+
+</div>
+
+</body>
+</html>

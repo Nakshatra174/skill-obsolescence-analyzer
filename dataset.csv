@@ -1,0 +1,11 @@
+skill,years_experience,demand_score,automation_risk,learning_trend,risk_level
+Python,1,9,2,9,Low
+Python,3,8,3,8,Low
+Java,5,6,5,6,Medium
+Java,8,5,6,5,Medium
+COBOL,10,2,9,1,High
+COBOL,12,1,10,1,High
+AI Engineer,2,9,3,9,Low
+AI Engineer,1,8,4,8,Low
+Manual Testing,6,4,7,3,High
+Manual Testing,4,5,6,4,Medium
