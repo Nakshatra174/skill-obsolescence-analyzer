@@ -1,11 +1,301 @@
 skill,years_experience,demand_score,automation_risk,learning_trend,risk_level
-Python,1,9,2,9,Low
-Python,3,8,3,8,Low
-Java,5,6,5,6,Medium
-Java,8,5,6,5,Medium
-COBOL,10,2,9,1,High
-COBOL,12,1,10,1,High
-AI Engineer,2,9,3,9,Low
-AI Engineer,1,8,4,8,Low
-Manual Testing,6,4,7,3,High
-Manual Testing,4,5,6,4,Medium
+Machine Learning,1,10,10,8,Medium
+Cloud Computing,3,6,1,8,Low
+Python,8,8,7,3,Medium
+Blockchain,5,7,6,6,Medium
+Python,2,9,3,5,Low
+Figma,9,9,5,1,Medium
+Mobile Development,1,6,10,6,High
+Mobile Development,5,10,8,3,Medium
+DevOps,9,1,6,6,High
+PyTorch,6,7,10,10,Medium
+UI/UX Design,3,6,5,8,Low
+TypeScript,3,8,5,6,Low
+C,4,6,1,3,Low
+Adobe XD,9,8,10,4,High
+Android,10,3,4,1,High
+AWS,6,1,8,10,Medium
+Game Development,5,9,2,3,Low
+Power BI,3,9,8,9,Low
+NoSQL,12,5,7,10,Medium
+C++,1,9,2,5,Low
+Azure,1,5,7,2,High
+Unity,10,5,5,4,Medium
+Unreal Engine,4,3,10,2,High
+Machine Learning,4,6,1,10,Low
+SQL,2,8,6,10,Low
+Java,3,6,6,4,Medium
+Google Cloud,12,6,4,9,Low
+C,5,3,8,1,High
+Automation Testing,12,6,5,2,Medium
+Docker,9,6,5,2,Medium
+Mobile Development,11,5,4,2,Medium
+SQL,2,5,8,8,Medium
+Data Science,4,6,5,1,Medium
+Adobe XD,4,6,4,7,Low
+Manual Testing,3,1,1,3,Medium
+React,7,9,7,4,Medium
+Manual Testing,4,8,4,5,Low
+Python,12,5,2,2,Medium
+Power BI,10,2,3,6,Medium
+NoSQL,3,9,8,5,Medium
+C++,9,6,4,5,Medium
+Unreal Engine,5,2,9,10,High
+Blockchain,11,2,8,4,High
+Kubernetes,4,2,9,6,High
+Flask,6,8,9,5,Medium
+TensorFlow,7,6,2,2,Medium
+Adobe XD,8,5,10,7,High
+Node.js,10,8,10,8,Medium
+Big Data,4,5,6,4,Medium
+Automation Testing,1,7,8,10,Medium
+C++,1,3,1,3,Medium
+Azure,8,7,2,3,Low
+C++,6,5,1,8,Low
+Spring Boot,8,4,7,3,High
+iOS,11,10,3,7,Low
+Cloud Computing,4,9,5,3,Medium
+Spark,7,9,2,5,Low
+Machine Learning,11,3,9,6,High
+Big Data,12,5,6,10,Low
+Data Science,2,1,3,6,Medium
+Unity,4,1,10,10,High
+iOS,5,6,5,4,Medium
+Cloud Computing,5,4,9,10,Medium
+Computer Vision,9,5,4,9,Low
+Blockchain,8,7,4,1,Medium
+Django,4,9,5,10,Low
+DevOps,10,6,9,3,High
+Django,5,1,9,2,High
+Angular,9,4,7,7,Medium
+Spark,10,1,3,5,Medium
+Cybersecurity,9,10,10,2,High
+DevOps,11,8,1,8,Low
+Adobe XD,4,3,3,6,Medium
+TypeScript,8,8,8,7,Medium
+PyTorch,1,9,8,8,Medium
+Angular,11,1,6,6,High
+C,10,4,9,4,High
+Kubernetes,8,1,1,1,Medium
+Tableau,10,6,7,3,High
+SQL,2,4,10,8,High
+Selenium,9,6,4,2,Medium
+Unreal Engine,5,4,7,1,High
+Selenium,3,8,8,7,Medium
+Power BI,2,8,6,5,Medium
+Vue,6,3,9,6,High
+Vue,5,10,6,5,Low
+UI/UX Design,6,3,6,5,High
+TensorFlow,2,7,6,4,Medium
+Figma,6,2,9,5,High
+Java,2,1,2,7,Medium
+Azure,4,1,5,5,High
+AI Engineer,5,4,5,5,Medium
+Unreal Engine,4,6,10,1,High
+Vue,4,8,2,9,Low
+Tableau,6,4,9,9,Medium
+Angular,2,5,4,1,Medium
+AWS,10,8,4,5,Low
+JavaScript,10,5,5,2,Medium
+CI/CD,10,7,10,5,High
+Data Engineering,1,10,8,9,Low
+AWS,3,6,2,2,Medium
+Django,9,9,8,1,High
+Python,12,6,3,3,Medium
+Selenium,1,1,2,1,High
+Kubernetes,4,9,8,8,Medium
+Mobile Development,6,10,3,8,Low
+Android,2,10,10,3,High
+UI/UX Design,11,8,6,6,Medium
+Big Data,9,3,6,8,Medium
+Google Cloud,2,1,3,7,Medium
+Deep Learning,2,7,3,5,Low
+Tableau,6,7,4,8,Low
+AWS,2,2,3,4,Medium
+Docker,2,4,1,10,Low
+Blockchain,2,10,10,2,High
+Angular,4,10,9,9,Low
+Python,5,10,2,9,Low
+Data Engineering,10,1,8,1,High
+Hadoop,10,3,4,7,Medium
+PyTorch,8,5,4,1,Medium
+Unity,4,4,5,1,High
+Game Development,6,6,8,7,Medium
+AI Engineer,5,1,7,6,High
+Android,8,10,7,10,Low
+Spring Boot,12,2,4,8,Medium
+Unity,11,3,3,8,Low
+Data Engineering,3,7,9,10,Medium
+PyTorch,8,10,10,10,Medium
+Django,5,9,4,5,Low
+Node.js,6,6,9,1,High
+Docker,3,3,7,5,High
+Computer Vision,5,8,1,3,Low
+Unity,7,3,6,1,High
+SQL,11,4,8,3,High
+Deep Learning,6,10,4,2,Medium
+Manual Testing,8,6,4,1,Medium
+Big Data,10,7,7,2,High
+Spark,2,5,10,1,High
+React,9,2,6,4,High
+iOS,10,5,7,9,Medium
+Angular,4,8,10,4,High
+JavaScript,4,6,4,9,Low
+iOS,9,3,7,9,Medium
+iOS,10,5,5,4,Medium
+React,9,5,4,2,Medium
+Docker,1,10,2,5,Low
+Docker,6,8,1,5,Low
+Cloud Computing,2,4,10,3,High
+CI/CD,8,6,5,9,Low
+Power BI,11,2,3,4,Medium
+Unreal Engine,7,4,3,6,Medium
+Google Cloud,2,1,6,8,Medium
+Ethical Hacking,2,9,3,3,Low
+Spark,9,3,9,5,High
+Excel,5,4,8,6,High
+Cybersecurity,10,10,8,4,Medium
+Spark,4,8,9,3,High
+React,12,4,10,2,High
+Tableau,2,4,5,3,Medium
+Cloud Computing,8,2,2,6,Medium
+Deep Learning,8,1,5,5,High
+Angular,1,2,2,10,Low
+iOS,4,1,3,2,High
+Unreal Engine,7,10,10,8,Medium
+Android,8,7,10,7,Medium
+React,11,7,3,10,Low
+DevOps,12,5,10,6,High
+Manual Testing,5,7,10,8,Medium
+AI Engineer,5,1,10,8,High
+Ethical Hacking,10,9,6,4,Medium
+Game Development,11,6,9,10,Medium
+TensorFlow,10,5,10,5,High
+Java,7,7,6,4,Medium
+Google Cloud,3,1,9,7,High
+Cloud Computing,7,9,10,3,High
+CI/CD,3,10,10,7,Medium
+C,10,2,7,4,High
+Data Science,9,7,4,4,Medium
+Python,9,3,4,9,Medium
+Ethical Hacking,9,9,5,3,Medium
+AI Engineer,11,3,8,6,High
+UI/UX Design,6,1,6,6,High
+Spark,2,9,9,1,High
+AI Engineer,10,9,5,6,Low
+TypeScript,10,10,7,2,Medium
+Blockchain,7,7,9,9,Medium
+Deep Learning,3,9,4,4,Low
+Figma,11,1,4,4,High
+Tableau,7,6,9,10,Medium
+Data Science,6,6,5,9,Low
+Deep Learning,6,3,7,3,High
+C,9,6,3,8,Low
+Google Cloud,11,1,1,4,Medium
+Power BI,2,3,6,2,High
+Google Cloud,9,2,9,5,High
+Game Development,5,10,10,4,Medium
+Node.js,5,7,5,2,Medium
+React,7,3,1,9,Low
+Excel,8,5,6,2,High
+Unity,3,6,2,8,Low
+SQL,10,7,1,9,Low
+Cloud Computing,6,1,7,1,High
+TypeScript,8,4,8,3,High
+Hadoop,9,5,1,8,Low
+React,10,4,5,9,Medium
+Cybersecurity,3,8,7,3,Medium
+Node.js,11,2,8,5,High
+iOS,9,7,1,4,Low
+Flutter,1,6,4,1,Medium
+Angular,3,10,2,6,Low
+Hadoop,5,7,7,2,High
+Hadoop,7,1,1,5,Medium
+Adobe XD,7,2,3,3,Medium
+SQL,11,2,3,7,Medium
+Manual Testing,1,10,8,1,Medium
+Unity,5,8,8,6,Medium
+Deep Learning,7,10,10,2,High
+Mobile Development,1,2,4,1,High
+Mobile Development,12,7,5,4,Medium
+TypeScript,7,7,8,8,Medium
+Spark,1,9,10,5,Medium
+Cybersecurity,8,1,10,6,High
+Docker,1,3,3,5,Medium
+Android,5,2,8,1,High
+Flutter,4,3,6,3,High
+SQL,8,4,5,10,Low
+DevOps,5,7,5,3,Medium
+Machine Learning,4,2,6,2,High
+NLP,3,2,6,10,Medium
+Docker,1,1,4,8,Medium
+DevOps,3,10,5,10,Low
+UI/UX Design,4,7,1,8,Low
+Flutter,7,2,7,2,High
+Excel,9,6,4,10,Low
+Data Science,7,8,2,8,Low
+Java,9,3,8,7,High
+Flutter,9,8,10,5,High
+Android,7,1,2,7,Medium
+TypeScript,12,5,7,5,Medium
+Unity,6,9,9,3,High
+Python,7,3,4,5,Medium
+C++,1,6,3,7,Low
+Vue,11,9,8,3,Medium
+Vue,6,9,8,2,Medium
+TensorFlow,3,3,4,2,High
+Azure,6,5,7,3,High
+Automation Testing,9,4,9,8,High
+Spark,1,2,1,8,Low
+Data Science,12,7,4,6,Low
+Unity,6,3,6,3,High
+Android,12,2,10,4,High
+SQL,2,5,5,2,Medium
+Flask,1,3,2,7,Low
+CI/CD,2,5,3,2,Medium
+Spark,12,8,1,6,Low
+Vue,12,9,9,4,Medium
+NoSQL,3,5,10,10,Medium
+Power BI,5,6,9,10,Medium
+Java,11,1,4,9,Medium
+NLP,5,8,3,9,Low
+CI/CD,12,9,7,2,Medium
+TensorFlow,11,7,4,6,Low
+Django,3,8,7,2,Medium
+Ethical Hacking,12,10,8,9,Low
+Automation Testing,6,8,9,10,Medium
+Deep Learning,12,3,9,6,High
+Flask,5,7,4,10,Low
+Tableau,10,5,5,1,High
+DevOps,12,1,6,6,High
+Adobe XD,7,5,3,1,Medium
+Deep Learning,8,10,9,6,Medium
+Deep Learning,4,10,1,6,Low
+Google Cloud,2,4,2,1,Medium
+Cybersecurity,5,4,7,2,High
+Hadoop,4,4,1,7,Low
+React,8,4,10,3,High
+Azure,8,9,10,9,Medium
+Unity,9,1,8,7,High
+NoSQL,3,10,10,9,Medium
+Java,3,10,10,1,High
+Mobile Development,1,4,6,2,High
+NoSQL,11,1,8,9,High
+Android,9,6,4,6,Medium
+Mobile Development,11,6,10,2,High
+Cybersecurity,3,9,1,2,Low
+NLP,2,1,5,9,Medium
+CI/CD,7,10,9,1,High
+Excel,10,6,6,1,High
+Tableau,12,8,3,2,Medium
+Flutter,5,7,4,10,Low
+Flutter,4,7,6,5,Medium
+UI/UX Design,9,8,2,1,Medium
+AI Engineer,3,10,6,5,Low
+Spring Boot,5,10,2,2,Low
+Cloud Computing,7,10,7,6,Medium
+Django,10,2,7,7,High
+Spring Boot,12,1,8,6,High
+Machine Learning,1,4,5,2,High
+Azure,1,1,5,3,High
+Automation Testing,7,7,3,2,Medium
