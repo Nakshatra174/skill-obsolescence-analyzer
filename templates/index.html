@@ -3,11 +3,12 @@
 <head>
     <title>Skill Obsolescence Analyzer</title>
 
-    <!-- CSS connection -->
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<style>
-/* 🔥 AUTOCOMPLETE DROPDOWN STYLE */
-.suggestions-box {
+
+    <style>
+        /* 🔥 DROPDOWN STYLE (CLEAN + FIXED) */
+        .suggestions-box {
     position: absolute;
     top: 100%;
     left: 0;
@@ -20,77 +21,159 @@
     z-index: 1000;
     border-radius: 0 0 8px 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+    opacity: 0;
+    transform: translateY(-5px);
+    visibility: hidden;
+    transition: all 0.2s ease;
 }
 
-.suggestion-item {
-    padding: 10px;
-    cursor: pointer;
+.suggestions-box.active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
 }
 
-.suggestion-item:hover {
-    background-color: #f0f0f0;
-}
-</style>
+        .suggestion-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .suggestion-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .highlight {
+            color: #2563eb;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
-   {% include 'navbar.html' %}
 
+{% include 'navbar.html' %}
 
+<div class="container">
 
-    <div class="container">
+    <h2>Skill Obsolescence Analyzer</h2>
 
-        <h2>Skill Obsolescence Analyzer</h2>
+    <form action="/predict" method="post" class="center-form">
 
-        <form action="/predict" method="post" class="center-form">
+        <label>Enter Skill Name</label><br>
 
-            <label>Enter Skill Name</label><br>
-            <div style="position: relative; width: 100%;">
-    
-            <input type="text" id="skill" name="skill"
-            autocomplete="off"
-            onkeyup="getSuggestions()"
-            style="width: 100%; padding: 10px;">
+        <div style="position: relative; width: 100%;">
+
+            <input type="text"
+                   id="skill"
+                   name="skill"
+                   autocomplete="off"
+                   onkeydown="getSuggestions(event)"
+                   style="width: 100%; padding: 10px;">
 
             <div id="suggestions" class="suggestions-box"></div>
 
+        </div>
+
+        <button type="submit">Check Obsolescence</button>
+
+    </form>
+
 </div>
 
-            <button type="submit">Check Obsolescence</button>
-
-        </form>
-
-    </div>
 <script>
-function getSuggestions() {
+let currentIndex = -1;
 
-    let input = document.getElementById("skill").value;
+function getSuggestions(event) {
+
+    let inputBox = document.getElementById("skill");
+    let input = inputBox.value;
     let suggestionsList = document.getElementById("suggestions");
+
+    // 🔽 ENTER KEY FIX
+    if (event.key === "Enter") {
+        let items = document.querySelectorAll(".suggestion-item");
+
+        if (items.length > 0) {
+            event.preventDefault();
+
+            let selectedItem = currentIndex >= 0 ? items[currentIndex] : items[0];
+
+            inputBox.value = selectedItem.getAttribute("data-value");
+
+            suggestionsList.innerHTML = "";
+            suggestionsList.classList.add("active");
+
+            document.querySelector("form").submit();
+        }
+        return;
+    }
+
+    // 🔽 ARROW KEYS
+    if (event.key === "ArrowDown") {
+        currentIndex++;
+        updateSelection();
+        return;
+    }
+
+    if (event.key === "ArrowUp") {
+        currentIndex--;
+        updateSelection();
+        return;
+    }
+
+    currentIndex = -1;
 
     if (input.length === 0) {
         suggestionsList.innerHTML = "";
+        suggestionsList.classList.remove("active");
         return;
     }
 
     fetch(`/autocomplete?q=${input}`)
         .then(response => response.json())
         .then(data => {
+
             suggestionsList.innerHTML = "";
+            suggestionsList.classList.add("active");
 
             data.forEach(skill => {
+
                 let div = document.createElement("div");
                 div.classList.add("suggestion-item");
-                div.textContent = skill;
+
+                div.setAttribute("data-value", skill);
+
+                let highlighted = skill.replace(
+                    new RegExp(input, "gi"),
+                    match => `<span class="highlight">${match}</span>`
+                );
+
+                div.innerHTML = highlighted;
 
                 div.onclick = () => {
-                    document.getElementById("skill").value = skill;
+                    inputBox.value = skill;
                     suggestionsList.innerHTML = "";
+                    suggestionsList.style.display = "active";
                 };
 
                 suggestionsList.appendChild(div);
             });
         });
 }
+
+function updateSelection() {
+    let items = document.querySelectorAll(".suggestion-item");
+
+    if (items.length === 0) return;
+
+    if (currentIndex >= items.length) currentIndex = 0;
+    if (currentIndex < 0) currentIndex = items.length - 1;
+
+    items.forEach(item => item.style.background = "");
+    items[currentIndex].style.background = "#dbeafe";
+}
 </script>
+
 </body>
 </html>
