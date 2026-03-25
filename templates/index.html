@@ -154,7 +154,7 @@ function getSuggestions(event) {
                 div.onclick = () => {
                     inputBox.value = skill;
                     suggestionsList.innerHTML = "";
-                    suggestionsList.style.display = "active";
+                    suggestionsList.classList.add("active");
                 };
 
                 suggestionsList.appendChild(div);
