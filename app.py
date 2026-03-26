@@ -71,16 +71,22 @@ def predict():
     # -------- RULE-BASED PREDICTION --------
     score, rule_risk, details = predict_obsolescence_by_skill(skill)
 
-    # ✅ HANDLE UNKNOWN SKILL (FIX)
+    
+
+    interpretation = "This skill is being evaluated based on demand, automation risk, and industry usage."
     if rule_risk is None:
+    
         return render_template(
             'result.html',
             skill=skill,
-            score="N/A",
-            risk="❌ Skill not found in dataset",
-            details={},
-            recommendations=[]
-        )
+            score=score,
+            risk=risk,
+            details=details,
+            recommendations=recommendations,
+            interpretation="Skill not found. Please try another skill."
+)
+
+
 
     # -------- ML INPUTS --------
     years = int(request.form.get('years', 3))
@@ -88,9 +94,17 @@ def predict():
     automation = int(request.form.get('automation', 5))
     trend = int(request.form.get('trend', 5))
 
-    # -------- ML PREDICTION --------
-    ml_risk = predict_risk_ml(years, demand, automation, trend)
 
+    # -------- ML Prediction --------
+    ml_risk = predict_risk_ml(years, demand, automation, trend)
+    risk = f"{rule_risk} (ML Prediction: {ml_risk})"
+    
+    # -------- RECOMMENDATIONS --------
+    recommendations = []
+
+    if (rule_risk and "High" in rule_risk) or ml_risk == "High":
+        recommendations = recommend_skills(skill)
+    
     # -------- COMBINE RESULTS --------
     risk = f"{rule_risk} (ML Prediction: {ml_risk})"
 
@@ -98,8 +112,12 @@ def predict():
     recommendations = []
 
     # ✅ SAFE CONDITION (FIX)
-    if (rule_risk and "High" in rule_risk) or ml_risk == "High":
+    if "High" in rule_risk:
         recommendations = recommend_skills(skill)
+    elif "Medium" in rule_risk:
+        recommendations = recommend_skills(skill)[:2]
+    else:
+        recommendations = ["Keep upgrading current skill", "Learn advanced concepts"]
 
     # -------- FINAL OUTPUT --------
     return render_template(

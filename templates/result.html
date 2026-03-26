@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Skill Analysis Report</title>
+    <title>Skill Obsolescence Report</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
@@ -9,75 +9,54 @@
 
 {% include 'navbar.html' %}
 
-
 <div class="container">
 
-{% if message %}
-    <h2>{{ message }}</h2>
-{% else %}
+    <div class="card">
 
-    <h2>Skill Obsolescence Report</h2>
+        <h2>Skill Obsolescence Report</h2>
 
-    <p><b>Skill Name:</b> {{ skill }}</p>
-<p><b>Obsolescence Score:</b> {{ score }}</p>
-<p><b>Risk Level:</b> {{ risk }}</p>
+        <p><strong>Skill Name:</strong> {{ skill }}</p>
 
-<hr>
+        <p><strong>Obsolescence Score:</strong> {{ score }}</p>
 
-<h3>Factor-wise Analysis</h3>
+        <p><strong>Risk Level:</strong> {{ risk }}</p>
 
-<ul>
-    <li><b>Demand Level:</b> {{ details.demand }} / 10</li>
-    <li><b>Automation Risk:</b> {{ details.automation }} / 10</li>
-    <li><b>Industry Usage:</b> {{ details.industry }} / 10</li>
-</ul>
+        <hr>
 
-<hr>
+        <h3>Factor-wise Analysis</h3>
 
-<h3>Interpretation</h3>
-<p>
-    The obsolescence score is calculated by giving higher weight to automation
-    exposure, followed by demand decline and industry relevance.
-    Skills with high automation risk and low demand are more likely to become obsolete.
-</p>
+        <ul>
+            <li><strong>Demand Level:</strong> {{ details.demand_score if details else "N/A" }}/10</li>
+            <li><strong>Automation Risk:</strong> {{ details.automation_risk if details else "N/A" }}/10</li>
+            <li><strong>Industry Usage:</strong> {{ details.learning_trend if details else "N/A" }}/10</li>
+        </ul>
 
+        <hr>
 
-{% endif %}
+        <!-- ✅ ONLY ONE INTERPRETATION -->
+        <h3>Interpretation</h3>
+        <p>{{ interpretation }}</p>
 
-<a href="/analyze">Analyze Another Skill</a>
-{% if recommendations and recommendations|length > 0 %}
-<hr>
+        <hr>
 
-<div style="max-width: 400px; margin: 30px auto;">
+        <!-- ✅ RECOMMENDATIONS -->
+        <h3>Recommended Skills</h3>
 
-    <h3 style="text-align:center;">Recommended Alternative Skills</h3>
+        {% if recommendations and recommendations|length > 0 %}
+            <ul>
+                {% for rec in recommendations %}
+                    <li>{{ rec }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p style="color: gray;">No recommendations available</p>
+        {% endif %}
 
-    <ul style="
-        list-style: disc;
-        padding-left: 40px;
-        text-align: left;
-        margin-top: 15px;
-        font-size: 16px;
-    ">
-        {% for skill in recommendations %}
-            <li style="margin-bottom: 6px;">
-                {{ skill }}
-            </li>
-        {% endfor %}
-    </ul>
+        <hr>
 
-    <p style="
-        text-align:center;
-        font-size:14px;
-        color:#555;
-        margin-top: 15px;
-    ">
-        These skills are considered more future-proof based on current market trends.
-    </p>
+        <a href="/analyze">Analyze Another Skill</a>
 
-</div>
-{% endif %}
-
+    </div>
 
 </div>
 
